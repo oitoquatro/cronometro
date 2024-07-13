@@ -33,6 +33,16 @@ const Timer = () => {
     return interval;
   };
 
+  const resetTimer = () => {
+    setMiliSeconds(0);
+    setTimerOn(false);
+    setLaps([]);
+  };
+
+  const addLap = () => {
+    setLaps([...laps, formatTime()]);
+  };
+
   useEffect(() => {
     let interval = null;
 
@@ -49,8 +59,11 @@ const Timer = () => {
     <div className="timer-container">
       <TimerDisplay time={formatTime()} />
       <TimerControls
+        timerOn={timerOn}
         onStart={() => setTimerOn(true)}
         onStop={() => setTimerOn(false)}
+        onReset={resetTimer}
+        onLap={addLap}
       />
       <LapList />
     </div>
