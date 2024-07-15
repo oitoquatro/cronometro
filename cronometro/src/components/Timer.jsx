@@ -55,6 +55,8 @@ const Timer = () => {
     return () => stopTimer(interval);
   }, [timerOn]);
 
+  console.log(laps)
+
   return (
     <div className="timer-container">
       <TimerDisplay time={formatTime()} />
@@ -65,7 +67,7 @@ const Timer = () => {
         onReset={resetTimer}
         onLap={addLap}
       />
-      <LapList />
+      <LapList laps={laps}/>
     </div>
   );
 };

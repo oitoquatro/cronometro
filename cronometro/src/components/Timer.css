@@ -55,5 +55,5 @@
 }
 
 .timer-laps li:nth-child(odd) {
-background-color: #ddd;
-}
+  background-color: #ddd;
+  }
